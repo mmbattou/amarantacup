@@ -1,3 +1,508 @@
-<html>
-  <body> Hi Amaranta Cup</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amaranta Cup</title>
+    <style>
+      :root {
+        --header-bg: #fff9f7;
+        --ink: #514b4b;
+        --accent: #c30f58;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Trebuchet MS", sans-serif;
+      }
+
+      .site-header {
+        min-height: 104px;
+        padding: 0 8.8%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        background: var(--header-bg);
+        border-top: 1px solid #eadfdd;
+        border-bottom: 1px solid #f1e7e5;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        width: 222px;
+        height: 88px;
+        color: #b5114e;
+        text-decoration: none;
+      }
+
+      .brand img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin-left: auto;
+      }
+
+      .main-nav a {
+        padding: 12px 0;
+        color: var(--ink);
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 160ms ease;
+      }
+
+      .main-nav a:hover,
+      .main-nav a[aria-current="page"] {
+        color: var(--accent);
+      }
+
+      .order-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        min-width: 135px;
+        min-height: 38px;
+        padding: 0 19px;
+        border-radius: 22px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .order-button:hover {
+        background: #a70c4a;
+        transform: translateY(-1px);
+      }
+
+      .chat-icon {
+        width: 15px;
+        height: 13px;
+        position: relative;
+        display: inline-block;
+        border: 1.5px solid currentColor;
+        border-radius: 50%;
+      }
+
+      .chat-icon::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 1px;
+        width: 5px;
+        height: 5px;
+        border-left: 1.5px solid currentColor;
+        transform: skew(-28deg);
+      }
+
+      .hero {
+        min-height: calc(100vh - 104px);
+        padding: 72px 6%;
+        position: relative;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        isolation: isolate;
+        background: url("img/fondoinicio.webp") center center / cover no-repeat;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: rgba(28, 16, 18, 0.47);
+      }
+
+      .hero-content {
+        max-width: 850px;
+        color: #fff;
+        text-align: center;
+        animation: hero-enter 700ms ease-out both;
+      }
+
+      .hero-kicker {
+        margin: 0 0 18px;
+        color: #e62b68;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        max-width: 820px;
+        margin: 0 auto 20px;
+        font-family: Georgia, serif;
+        font-size: clamp(48px, 5.3vw, 76px);
+        font-weight: 400;
+        line-height: 0.98;
+      }
+
+      .hero-description {
+        max-width: 690px;
+        margin: 0 auto 38px;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .hero-button {
+        min-width: 184px;
+      }
+
+      .hero-button--secondary {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        background: rgba(40, 27, 29, 0.22);
+      }
+
+      .hero-button--secondary:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      .arrow-icon {
+        font-size: 21px;
+        line-height: 0;
+      }
+
+      .specialty-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.94fr);
+        align-items: center;
+        gap: 6.2%;
+        padding: 88px 8.8%;
+        background: #fff9f7;
+      }
+
+      .specialty-media {
+        min-height: 450px;
+        position: relative;
+      }
+
+      .specialty-media img {
+        display: block;
+        width: 100%;
+        height: 450px;
+        border-radius: 22px;
+        object-fit: cover;
+        object-position: center 58%;
+        box-shadow: 0 18px 28px rgba(69, 34, 30, 0.14);
+      }
+
+      .specialty-badge {
+        position: absolute;
+        left: 24px;
+        bottom: 23px;
+        min-width: 144px;
+        padding: 13px 19px 12px;
+        border-radius: 15px;
+        background: #fff9f7;
+        color: var(--accent);
+        box-shadow: 0 8px 18px rgba(69, 34, 30, 0.1);
+        font-family: Georgia, serif;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .specialty-badge small {
+        display: block;
+        margin-top: 3px;
+        font-family: "Trebuchet MS", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+      }
+
+      .specialty-copy {
+        max-width: 590px;
+      }
+
+      .specialty-kicker {
+        margin: 0 0 25px;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+      }
+
+      .specialty-copy h2 {
+        margin: 0 0 22px;
+        color: #181214;
+        font-family: Georgia, serif;
+        font-size: clamp(42px, 4vw, 58px);
+        font-weight: 400;
+        line-height: 1.08;
+      }
+
+      .specialty-description {
+        margin: 0 0 23px;
+        color: #c84b33;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .benefits {
+        display: grid;
+        gap: 13px;
+        margin: 0 0 29px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .benefits li {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        color: #514b4b;
+        font-size: 14px;
+      }
+
+      .benefits li::before {
+        content: "✓";
+        display: grid;
+        width: 19px;
+        height: 19px;
+        flex: 0 0 19px;
+        place-items: center;
+        border: 1.5px solid var(--accent);
+        border-radius: 50%;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .specialty-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .specialty-action {
+        min-width: 173px;
+      }
+
+      .specialty-action--outline {
+        border: 1px solid #e78ba5;
+        background: transparent;
+        color: var(--accent);
+      }
+
+      .specialty-action--outline:hover {
+        background: #fff0f4;
+      }
+
+      @keyframes hero-enter {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .site-header {
+          min-height: 0;
+          padding: 18px 6%;
+          flex-wrap: wrap;
+          gap: 18px;
+        }
+
+        .brand {
+          width: 190px;
+          height: 76px;
+        }
+
+        .main-nav {
+          order: 3;
+          width: 100%;
+          justify-content: space-between;
+          gap: 12px;
+          overflow-x: auto;
+        }
+
+        .main-nav a {
+          white-space: nowrap;
+          font-size: 13px;
+        }
+
+        .hero {
+          min-height: calc(100vh - 164px);
+          padding: 58px 6%;
+          background-position: 57% center;
+        }
+
+        .hero h1 {
+          font-size: clamp(42px, 11vw, 60px);
+        }
+
+        .hero-description {
+          font-size: 16px;
+        }
+
+        .specialty-section {
+          grid-template-columns: 1fr;
+          gap: 42px;
+          padding: 64px 6%;
+        }
+
+        .specialty-media,
+        .specialty-media img {
+          min-height: 360px;
+          height: 360px;
+        }
+
+        .specialty-copy {
+          max-width: none;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .brand {
+          width: 164px;
+          height: 66px;
+        }
+
+        .order-button {
+          min-width: 112px;
+          padding: 0 13px;
+          font-size: 12px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .hero-button {
+          width: min(100%, 230px);
+        }
+
+        .specialty-section {
+          gap: 32px;
+          padding-top: 48px;
+          padding-bottom: 48px;
+        }
+
+        .specialty-media,
+        .specialty-media img {
+          min-height: 300px;
+          height: 300px;
+          border-radius: 16px;
+        }
+
+        .specialty-copy h2 {
+          font-size: 40px;
+        }
+
+        .specialty-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .specialty-action {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Amaranta Cup, inicio">
+        <img src="img/log.png" alt="Amaranta Cup" />
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="Charcuteria/Amaranta Cup - Desarrollar - GoDaddy Airo AI Builder.html">Charcutería</a>
+        <a href="Pasteleria/Amaranta Cup - Desarrollar - GoDaddy Airo AI Builder.html">Pastelería</a>
+        <a href="nosotros/Amaranta Cup - Desarrollar - GoDaddy Airo AI Builder.html">Nosotros</a>
+        <a href="Amaranta Cup -Contacto.html">Contacto</a>
+      </nav>
+
+      <a class="order-button" href="Amaranta Cup -Contacto.html">
+        <span class="chat-icon" aria-hidden="true"></span>
+        Pedir ahora
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="hero-kicker">Pastelería artesanal · Charcutería</p>
+          <h1 id="hero-title">Dulzura hecha con amor<br />para cada celebración</h1>
+          <p class="hero-description">
+            Postres artesanales, tortas personalizadas y tablas de charcutería gourmet.<br />
+            Todo listo para que tú solo disfrutes.
+          </p>
+          <div class="hero-actions">
+            <a class="order-button hero-button" href="Amaranta Cup -Contacto.html">
+              <span class="chat-icon" aria-hidden="true"></span>
+              Pedir por WhatsApp
+            </a>
+            <a class="order-button hero-button hero-button--secondary" href="Pasteleria/Amaranta Cup - Desarrollar - GoDaddy Airo AI Builder.html">
+              Ver catálogo
+              <span class="arrow-icon" aria-hidden="true">›</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="specialty-section" id="pasteleria" aria-labelledby="specialty-title">
+        <div class="specialty-media">
+          <img src="img/ponque1.png" alt="Pastel artesanal decorado con flores comestibles" />
+          <div class="specialty-badge">
+            Hecho con amor
+            <small>100% artesanal</small>
+          </div>
+        </div>
+
+        <div class="specialty-copy">
+          <p class="specialty-kicker">Nuestra especialidad</p>
+          <h2 id="specialty-title">Pastelería que enamora</h2>
+          <p class="specialty-description">
+            Cada postre es una pequeña obra de arte. Usamos ingredientes frescos y técnicas artesanales para crear sabores que se quedan en la memoria. Tortas, macarons, tartas y mucho más.
+          </p>
+          <ul class="benefits">
+            <li>Ingredientes frescos y de primera calidad</li>
+            <li>Personalización para cada ocasión</li>
+            <li>Presentación elegante lista para servir</li>
+          </ul>
+          <div class="specialty-actions">
+            <a class="order-button specialty-action" href="#pasteleria">
+              Ver pastelería
+              <span class="arrow-icon" aria-hidden="true">›</span>
+            </a>
+            <a class="order-button specialty-action specialty-action--outline" href="Amaranta Cup -Contacto.html">
+              <span class="chat-icon" aria-hidden="true"></span>
+              Pedir ahora
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
