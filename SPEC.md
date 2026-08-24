@@ -54,6 +54,7 @@ The current home page references these future pages, which are not present in th
 | FR-06 | Preserve valid navigation. | Every internal link points to an existing target in the delivered project or is explicitly marked as a future dependency. |
 | FR-07 | Add the information from attached image to the bottom of the index.html page and use the following images: tortaCelebracion, cajaTrufas y minicakeBloom  |
 | FR-08 | Add the information from attached image to the bottom of the index.html page and use the following images: tablaRose, tablaDuo y cajaPetit  |
+|FR -09| Create file pasteleria.html|
 
 ## 5. Non-Functional Requirements
 
