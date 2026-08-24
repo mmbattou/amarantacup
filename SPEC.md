@@ -40,7 +40,7 @@ The current home page references these future pages, which are not present in th
 - `Charcuteria/Amaranta Cup - Desarrollar - GoDaddy Airo AI Builder.html`
 - `Pasteleria/Amaranta Cup - Desarrollar - GoDaddy Airo AI Builder.html`
 - `nosotros/Amaranta Cup - Desarrollar - GoDaddy Airo AI Builder.html`
-- `Amaranta Cup -Contacto.html`
+- `contacto.html`
 
 ## 4. Functional Requirements
 
