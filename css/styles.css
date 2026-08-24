@@ -230,6 +230,161 @@ body {
   font-size: 11px;
 }
 
+.about-hero {
+  min-height: calc(100vh - 104px);
+  padding: 72px 6%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: url("../img/fondoNosotros.webp") center center / cover no-repeat;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(14, 20, 27, 0.62);
+}
+
+.about-hero-content {
+  max-width: 700px;
+  color: #fff;
+  text-align: center;
+  animation: hero-enter 700ms ease-out both;
+}
+
+.about-hero-kicker {
+  margin: 0 0 13px;
+  color: #fff;
+  font-size: 10px;
+}
+
+.about-hero h1 {
+  margin: 0 0 13px;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 4.5vw, 62px);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.about-hero-description {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.about-story-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 7%;
+  padding: 58px 7%;
+  background: #fff9f7;
+}
+
+.about-story-content {
+  max-width: 440px;
+  justify-self: end;
+}
+
+.about-story-content h2 {
+  margin: 0 0 15px;
+  color: #181214;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 3.5vw, 45px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.about-story-content p {
+  margin: 0 0 13px;
+  color: #c84b33;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.about-story-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-media {
+  max-width: 430px;
+  justify-self: start;
+}
+
+.about-story-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.94;
+  border-radius: 11px;
+  object-fit: cover;
+  box-shadow: 0 8px 15px rgba(69, 34, 30, 0.12);
+}
+
+.values-section {
+  padding: 58px 6px 45px;
+  background: #f7e5e9;
+}
+
+.values-section > h2 {
+  margin: 0 0 30px;
+  color: #181214;
+  font-family: Georgia, serif;
+  font-size: clamp(31px, 3.3vw, 43px);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.value-card {
+  min-height: 178px;
+  padding: 17px 15px 14px;
+  border: 1px solid #f0b7a7;
+  border-radius: 10px;
+  background: #fff9f7;
+  text-align: center;
+}
+
+.value-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 15px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f8dfe6;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.value-card h3 {
+  margin: 0 0 9px;
+  color: #181214;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.value-card p {
+  margin: 0;
+  color: #c84b33;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
 .promise-section {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
@@ -1488,6 +1643,45 @@ body {
 
   .pastry-hero-description {
     font-size: 13px;
+  }
+
+  .about-hero {
+    min-height: calc(100vh - 164px);
+    padding: 58px 6%;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(38px, 10vw, 56px);
+  }
+
+  .about-hero-description {
+    font-size: 13px;
+  }
+
+  .about-story-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 52px 8%;
+  }
+
+  .about-story-content,
+  .about-story-media {
+    width: 100%;
+    max-width: 520px;
+    justify-self: center;
+  }
+
+  .values-section {
+    padding: 52px 6% 42px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 520px;
+  }
+
+  .value-card {
+    min-height: 160px;
   }
 
   .promise-section {
