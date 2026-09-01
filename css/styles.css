@@ -1,5 +1,5 @@
 :root {
-  --header-bg: #fff9f7;
+  --header-bg: #FDE8EA;
   --ink: #514b4b;
   --accent: #c30f58;
 }
@@ -112,7 +112,7 @@ body {
   place-items: center;
   overflow: hidden;
   isolation: isolate;
-  background: url("../img/fondoinicio.webp") center center / cover no-repeat;
+  background: url("../img/cheesecake.webp") center center / cover no-repeat;
 }
 
 .hero::before {
